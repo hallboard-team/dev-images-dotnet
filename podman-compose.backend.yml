@@ -8,7 +8,7 @@ services:
   api:
     build:
       context: ..
-      dockerfile: podman/build/Dockerfile.dev
+      dockerfile: Dockerfile.dev
       args:
         DOTNET_VERSION: ${DOTNET_VERSION:-9.0}
 
