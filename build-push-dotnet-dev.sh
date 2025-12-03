@@ -2,7 +2,7 @@
 # -----------------------------
 # Build & Start Podman Compose for .NET dev environment (shared stack)
 # Usage:
-#   ./pull-build-start-dev.sh <port> [dotnet_version]
+#   ./pull-build-start-dev.sh [dotnet_version]
 # Example:
 #   ./build-push-dotnet-dev.sh 9.0
 # -----------------------------
