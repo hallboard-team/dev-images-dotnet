@@ -1,3 +1,8 @@
+# -----------------------------
+# Build & Push .NET Dev Image
+# Adjust the env block below to change registry,
+# repo, .NET version, variants, context, Dockerfile, or platforms.
+# -----------------------------
 name: Build & Push .NET Dev Image
 
 on:
