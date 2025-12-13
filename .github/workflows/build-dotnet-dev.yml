@@ -17,7 +17,7 @@ env:
   IMAGE_NAME: ${{ github.repository_owner }}/dotnet-dev
   DOTNET_VERSION: "9.0"
   VARIANTS_JSON: '["sdk"]'
-  DOCKER_CONTEXT: .
+  BUILD_CONTEXT: .
   DOCKERFILE: ./Dockerfile.dev
   PLATFORMS: linux/amd64
 
@@ -69,7 +69,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ${{ env.DOCKER_CONTEXT }}
+          context: ${{ env.BUILD_CONTEXT }}
           file: ${{ env.DOCKERFILE }}
           push: true
           platforms: ${{ env.PLATFORMS }}
