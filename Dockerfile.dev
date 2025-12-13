@@ -4,10 +4,12 @@
 # Works with .NET 9 and .NET 10
 # -----------------------------------------
 ARG DOTNET_VERSION=10.0
-FROM mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
+ARG DOTNET_VARIANT=sdk
+FROM mcr.microsoft.com/dotnet/${DOTNET_VARIANT}:${DOTNET_VERSION}
 
 # Re-declare for logging / metadata
 ARG DOTNET_VERSION
+ARG DOTNET_VARIANT
 
 # Use bash for consistent RUN behaviour
 SHELL ["/bin/bash", "-lc"]
