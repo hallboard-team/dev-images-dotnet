@@ -14,7 +14,7 @@ cd "$(dirname "$0")"
 
 DOTNET_VERSION="${1:-10.0}"
 IMAGE_VARIANT="${2:-sdk}"
-IMAGE="ghcr.io/hallboard-team/dotnet-dev:${DOTNET_VERSION}-${IMAGE_VARIANT}"
+IMAGE="ghcr.io/hallboard-team/dotnet:${DOTNET_VERSION}-${IMAGE_VARIANT}"
 
 docker build \
   -t "$IMAGE" \

@@ -8,7 +8,7 @@ Images are tagged with the `<dotnet-version>-<variant>` pattern (for example `10
 
 ## GitHub Actions build & push
 
-The workflow in `.github/workflows/build-dotnet-dev.yml` replicates the manual build process on GitHub Actions. It runs automatically on pushes that touch `Dockerfile.dev`, the workflow itself, or the helper script, and it can also be triggered manually. The job logs in to GHCR using the built-in `GITHUB_TOKEN`, builds the image with Buildx, and pushes it to `ghcr.io/<org-or-user>/dotnet-dev` with a tag such as `10.0-sdk`.
+The workflow in `.github/workflows/build-dotnet-dev.yml` replicates the manual build process on GitHub Actions. It runs automatically on pushes that touch `Dockerfile.dev`, the workflow itself, or the helper script, and it can also be triggered manually. The job logs in to GHCR using the built-in `GITHUB_TOKEN`, builds the image with Buildx, and pushes it to `ghcr.io/<org-or-user>/dotnet` with a tag such as `10.0-sdk`.
 
 All of the knobs you are likely to tweak live in the workflow `env` block (registry, repository, .NET version, variants JSON, build context/file, and platforms). To publish both sdk and runtime images, set `VARIANTS_JSON` to `["sdk","runtime"]` and the workflow will build/push both tags automatically.
 
@@ -22,4 +22,4 @@ You can still build locally before pushing changes:
 ./build-push-dotnet-dev.sh 10.0 runtime
 ```
 
-The script now publishes to `ghcr.io/hallboard-team/dotnet-dev:<version>-<variant>`, matching the tags produced by GitHub Actions.
+The script now publishes to `ghcr.io/hallboard-team/dotnet:<version>-<variant>`, matching the tags produced by GitHub Actions.
