@@ -20,7 +20,7 @@ permissions:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository_owner }}/dotnet
-  DOTNET_VERSION: "10.0"
+  DOTNET_VERSION: "9.0"
   VARIANTS_JSON: '["sdk"]'
   BUILD_CONTEXT: .
   DOCKERFILE: ./Dockerfile.dev
